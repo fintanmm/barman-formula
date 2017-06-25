@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
-template:
-  pkg: template
-  config: '/etc/template'
+barman:
+  pkg: barman
+  config: '/etc/barman'
   service:
-    name: template
+    name: barman
