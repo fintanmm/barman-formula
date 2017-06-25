@@ -4,5 +4,10 @@ barman:
   pkg: barman
   config: '/etc/barman.conf'
   config_dir: '/etc/barman.d'
+  home: /var/lib/barman
+  user: barman
+  log_file: /var/log/barman/barman.log
+  log_level: INFO
+  compression: gzip
   service:
     name: barman
