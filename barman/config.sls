@@ -6,7 +6,7 @@
 barman-config:
   file.managed:
     - name: {{ barman.config }}
-    - source: salt://barman/files/example.tmpl
+    - source: salt://barman/files/barman.conf
     - mode: 644
-    - user: root
-    - group: root
+    - user: barman
+    - group: barman
