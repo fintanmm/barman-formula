@@ -20,7 +20,6 @@ platforms:
 
 suites:
   - name: default
-  - name: version-5
     provisioner:
       pillars:
         top.sls:
