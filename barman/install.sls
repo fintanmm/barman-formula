@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{% from "template/map.jinja" import template with context %}
+{% from "barman/map.jinja" import barman with context %}
 
-template-pkg:
+include:
+  - barman.repo
+
+barman-pkg:
   pkg.installed:
-    - name: {{ template.pkg }}
+    - name: {{ barman.pkg }}
