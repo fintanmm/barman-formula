@@ -28,7 +28,8 @@ suites:
               - barman
         barman.sls:
           barman:
-            foo: 'boo'
+            log_level: INFO
+            compression: gzip
 
 verifier:
   name: shell
