@@ -8,8 +8,8 @@ barman-config:
     - name: {{ barman.config }}
     - source: salt://barman/files/barman.conf
     - mode: 644
-    - user: barman
-    - group: barman
+    - user: {{ barman.user }}
+    - group: {{ barman.user }}
     - template: jinja
     - defaults:
         user: {{ barman.user }}
