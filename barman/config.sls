@@ -10,3 +10,11 @@ barman-config:
     - mode: 644
     - user: barman
     - group: barman
+    - template: jinja
+    - defaults:
+        user: {{ barman.user }}
+        config_dir: {{ barman.config_dir }}
+        home: {{ barman.home }}
+        log_file: {{ barman.log_file }}
+        log_level: {{ barman.log_level }}
+        compression: {{ barman.compression }}
