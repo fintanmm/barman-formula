@@ -7,7 +7,7 @@ barman-repo:
     - name: deb {{ barman.repo_url }} {% salt['grains.get']('oscodename') %}-pgdg main
     - file: /etc/apt/sources.list.d/barman.list
     - gpgcheck: 1
-    - key_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    - key_url: {{ barman.repo_key }}
     - require_in:
       - pkg: barman
     - clean_file: true
