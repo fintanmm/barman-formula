@@ -30,6 +30,18 @@ barman-config:
       - pkg: {{ barman.pkg }}
     - template: jinja
     - defaults:
-        custom_var: "default value"
+        host: {{ host }}
+        description: {{ host.description }}
+        conninfo: {{ host.conninfo }}
+        backup_method: {{ host.backup_method }}
+{% if host.backup_method == 'postgres' %}
+        streaming_conninfo: {{ host.streaming_conninfo }}
+        streaming_archiver: {{ host.streaming_archiver }}
+        slot_name: {{ host.slot_name }}
+{% else %}
+        ssh_command: {{ host.ssh_command }}
+        reuse_backup: {{ host.reuse_backup }}
+        archiver: {{ host.archiver }}
+{% endif %}
 
 {% endfor %}
