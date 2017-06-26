@@ -2,6 +2,7 @@
 # vim: ft=yaml
 barman:
   pkg: barman
+  repo_url: 'http://apt.postgresql.org/pub/repos/apt'
   config: '/etc/barman.conf'
   config_dir: '/etc/barman.d'
   home: /var/lib/barman
