@@ -4,7 +4,7 @@
 barman-repo:
   pkgrepo.managed:
     - humanname: barman Repo
-    - name: deb {{ barman.repo_url }} {% salt['grains.get']('oscodename') %}-pgdg main
+    - name: deb {{ barman.repo_url }} {{ salt['grains.get']('oscodename') }}-pgdg main
     - file: /etc/apt/sources.list.d/barman.list
     - gpgcheck: 1
     - key_url: {{ barman.repo_key }}
