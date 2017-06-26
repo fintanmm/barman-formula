@@ -7,6 +7,7 @@ services:
   - docker
 
 before_install:
+  - sudo apt-get update && sudo apt-get install curl
   - pip install -r requirements.txt
 
 script: bundle exec kitchen verify
