@@ -29,6 +29,7 @@ barman-config:
     - template: jinja
     - defaults:
         host: {{ host }}
+        description: {{ cfg.description }}
         conninfo: {{ cfg.conninfo }}
         backup_method: {{ cfg.backup_method }}
 {% if cfg.backup_method == 'postgres' %}
