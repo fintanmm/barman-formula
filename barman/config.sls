@@ -26,8 +26,6 @@ barman-config:
     - user: {{ barman.user }}
     - group: {{ barman.user }}
     - mode: 644
-    - require:
-      - pkg: {{ barman.pkg }}
     - template: jinja
     - defaults:
         host: {{ host }}
