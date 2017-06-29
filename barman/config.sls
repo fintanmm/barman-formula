@@ -19,7 +19,7 @@ barman-config:
         log_level: {{ barman.log_level }}
         compression: {{ barman.compression }}
 
-{% for host in barman.hosts %}
+{% for host, cfg in barman.hosts.iteritems() %}
 {{ barman.config_dir }}/{{host}}.conf:
   file.managed:
     - source: salt://barman/files/host-template.conf
@@ -31,17 +31,17 @@ barman-config:
     - template: jinja
     - defaults:
         host: {{ host }}
-        description: {{ host.description }}
-        conninfo: {{ host.conninfo }}
-        backup_method: {{ host.backup_method }}
-{% if host.backup_method == 'postgres' %}
-        streaming_conninfo: {{ host.streaming_conninfo }}
-        streaming_archiver: {{ host.streaming_archiver }}
-        slot_name: {{ host.slot_name }}
+        conninfo: {{ cfg.conninfo }}
+        backup_method: {{ cfg.backup_method }}
+{% if cfg.backup_method == 'postgres' %}
+        streaming_conninfo: {{ cfg.streaming_conninfo }}
+        streaming_archiver: {{ cfg.streaming_archiver }}
+        slot_name: {{ cfg.slot_name }}
 {% else %}
-        ssh_command: {{ host.ssh_command }}
-        reuse_backup: {{ host.reuse_backup }}
-        archiver: {{ host.archiver }}
+        ssh_command: {{ cfg.ssh_command }}
+        reuse_backup: {{ cfg.reuse_backup }}
+        archiver: {{ cfg.archiver }}
 {% endif %}
 
 {% endfor %}
+
