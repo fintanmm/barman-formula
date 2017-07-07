@@ -30,6 +30,21 @@ suites:
           barman:
             log_level: INFO
             compression: gzip
+            hosts:
+              pgsql1:
+                description: "Example of PostgreSQL Database (Streaming-Only)"
+                conninfo: "host=pgsql1 user=barman dbname=postgres"
+                backup_method: postgres
+                streaming_conninfo: "host=pg user=streaming_barman"
+                streaming_archiver: "on"
+                slot_name: barman
+              pgsql2:
+                description: "Example of PostgreSQL Database (via Ssh)"
+                conninfo: "host=pgsql2 user=barman dbname=postgres"
+                backup_method: "rsync"
+                ssh_command: "ssh postgres@pgsql2"
+                reuse_backup: link
+                archiver: "on"            
 
 verifier:
   name: shell
