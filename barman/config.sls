@@ -32,6 +32,8 @@ barman-config:
         description: {{ cfg.description }}
         conninfo: {{ cfg.conninfo }}
         backup_method: {{ cfg.backup_method }}
+        last_backup_maximum_age: {{ cfg.last_backup_maximum_age }}
+        retention_policy: {{ cfg.retention_policy }}
 {% if cfg.backup_method == 'postgres' %}
         streaming_conninfo: {{ cfg.streaming_conninfo }}
         streaming_archiver: {{ cfg.streaming_archiver }}
