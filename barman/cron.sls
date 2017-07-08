@@ -5,7 +5,7 @@
 
 barman_cron_job:
   cron:
-    - {{ barman.cron.status }}
+    - {{ barman.cron.ensure }}
     - name: "/usr/bin/barman cron"
     - user: {{ barman.user }}
 

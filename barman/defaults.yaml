@@ -12,4 +12,4 @@ barman:
   log_level: INFO
   compression: gzip
   cron:
-    status: present
+    ensure: present
