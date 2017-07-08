@@ -3,7 +3,8 @@
 
 {% from "barman/map.jinja" import barman with context %}
 
-barman-name:
-  service.running:
-    - name: {{ barman.service.name }}
-    - enable: True
+barman_cron_job:
+  cron:
+    - {{ barman.cron.status }}
+    - name: "/usr/bin/barman cron"
+    - user: {{ barman.user }}
