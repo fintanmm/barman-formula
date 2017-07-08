@@ -13,7 +13,7 @@ def test_host_config_file_for_pgsql1(host):
     assert barman.contains("postgres")
 
 def  test_host_config_file_for_pgsql2(host):
-    barman = host.file("/etc/barman.d/pgsql1.conf")
-    assert barman.contains("pgsql1")
-    assert barman.contains("barman")
-    assert barman.contains("postgres")
+    barman = host.file("/etc/barman.d/pgsql2.conf")
+    assert barman.contains("pgsql2")
+    assert barman.contains("link")
+    assert barman.contains("rsync")
