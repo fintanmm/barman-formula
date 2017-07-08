@@ -9,6 +9,8 @@ barman:
       streaming_conninfo: "host=pg user=streaming_barman"
       streaming_archiver: "on"
       slot_name: barman
+      last_backup_maximum_age: "1 DAYS"
+      retention_policy: REDUNDANCY 4
     pgsql2:
       description: "Example of PostgreSQL Database (via Ssh)"
       conninfo: "host=pg user=barman dbname=postgres"
@@ -16,3 +18,5 @@ barman:
       ssh_command: "ssh postgres@pgsql2"
       reuse_backup: link
       archiver: "on"
+      last_backup_maximum_age: "1 DAYS"
+      retention_policy: REDUNDANCY 4
