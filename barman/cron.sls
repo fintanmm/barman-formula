@@ -12,10 +12,10 @@ barman_cron_job:
 {% for host, cfg in barman.hosts.iteritems() %}
 cron_job_{{ host }}:
   cron:
-    - {{ cfg.cron.ensure|'present' }}
+    - {{ cfg.cron.ensure }}
     - name: /usr/bin/barman backup {{ host }}
-    - minute: '{{ cfg.cron.minute|'30' }}'
-    - hour: '{{ cfg.cron.hour|'23' }}'
+    - minute: '{{ cfg.cron.minute }}'
+    - hour: '{{ cfg.cron.hour }}'
     - daymonth: '*'
     - month: '*'
     - dayweek: '*'
