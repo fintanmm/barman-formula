@@ -9,3 +9,5 @@ def test_config_file(host):
 def test_host_config_file(host):
     barman = host.file("/etc/barman.d/pgsql1.conf")
     assert barman.contains("pgsql1")
+    assert barman.contains("barman")
+    assert barman.contains("postgres")
