@@ -18,4 +18,20 @@ Available states
 ``barman``
 ------------
 
-Installs the barman package, and starts the associated barman service.
+Meta state for installing, setting up the config files and creating the cron entries.
+
+``barman.install``
+------------
+
+Installs the barman package.
+
+
+``barman.config``
+------------
+
+Configures barman and configures the host specific files.
+
+``barman.cron``
+------------
+
+Sets up the barman cron job and sets up the host specific cron job.
