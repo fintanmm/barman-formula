@@ -11,6 +11,10 @@ barman:
       slot_name: barman
       last_backup_maximum_age: "1 DAYS"
       retention_policy: REDUNDANCY 4
+      cron:
+        ensure: present
+        hour: 23
+        minute: 30
     pgsql2:
       description: "Example of PostgreSQL Database (via Ssh)"
       conninfo: "host=pg user=barman dbname=postgres"
@@ -20,3 +24,7 @@ barman:
       archiver: "on"
       last_backup_maximum_age: "1 DAYS"
       retention_policy: REDUNDANCY 4
+      cron:
+        ensure: present
+        hour: 23
+        minute: 30

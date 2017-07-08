@@ -38,13 +38,25 @@ suites:
                 streaming_conninfo: "host=pg user=streaming_barman"
                 streaming_archiver: "on"
                 slot_name: barman
+                last_backup_maximum_age: "1 DAYS"
+                retention_policy: REDUNDANCY 4
+                cron:
+                  ensure: present
+                  hour: 23
+                  minute: 30                
               pgsql2:
                 description: "Example of PostgreSQL Database (via Ssh)"
                 conninfo: "host=pgsql2 user=barman dbname=postgres"
                 backup_method: "rsync"
                 ssh_command: "ssh postgres@pgsql2"
                 reuse_backup: link
-                archiver: "on"            
+                archiver: "on"
+                last_backup_maximum_age: "1 DAYS"
+                retention_policy: REDUNDANCY 4
+                cron:
+                  ensure: present
+                  hour: 23
+                  minute: 30                            
 
 verifier:
   name: shell
