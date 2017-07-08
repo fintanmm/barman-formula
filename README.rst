@@ -25,13 +25,17 @@ Meta state for installing, setting up the config files and creating the cron ent
 
 Installs the barman package.
 
+``barman.repo``
+------------
+
+Manages the postgres repo for barman.
 
 ``barman.config``
 ------------
 
-Configures barman and configures the host specific files.
+Configures barman and the host specific files.
 
 ``barman.cron``
 ------------
 
-Sets up the barman cron job and sets up the host specific cron job.
+Sets up the barman cron job and the host specific cron job.
