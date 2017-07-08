@@ -4,4 +4,4 @@
 include:
   - barman.install
   - barman.config
-  # - barman.cron
+  - barman.cron
