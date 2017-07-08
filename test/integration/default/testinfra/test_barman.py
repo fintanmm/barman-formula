@@ -1,5 +1,8 @@
 import testinfra
 
+def test_barman_is_installed(host):
+    barman = host.package("barman")
+    assert barman.is_installed
 
 def test_config_file(host):
     barman = host.file("/etc/barman.conf")
