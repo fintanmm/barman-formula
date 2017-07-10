@@ -18,6 +18,7 @@ barman-config:
         log_file: {{ barman.log_file }}
         log_level: {{ barman.log_level }}
         compression: {{ barman.compression }}
+        recovery_options: {{ barman.recovery_options }}
 
 {% for host, cfg in barman.hosts.iteritems() %}
 {{ barman.config_dir }}/{{host}}.conf:
