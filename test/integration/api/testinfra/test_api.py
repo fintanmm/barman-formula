@@ -9,3 +9,7 @@ def test_config_file(host):
     assert barman.contains("log_level")
     assert barman.contains("gzip")
 
+def test_client_config_file(host):
+    barman = host.file("/usr/share/barmanapi/client.conf")
+    assert barman.contains("log_level")
+    assert barman.contains("gzip")
