@@ -36,7 +36,7 @@ barman-api-config:
 barman-api-client-config:
   file.managed:
     - name: {{ barman.api.client.config }}
-    - source: salt://barman/files/api_client.conf
+    - source: salt://barman/files/api-client.conf
     - mode: 644
     - user: {{ barman.user }}
     - group: {{ barman.user }}
