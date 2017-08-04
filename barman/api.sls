@@ -24,4 +24,21 @@ barman-api-config:
         log_file: {{ barman.log_file }}
         log_level: {{ barman.log_level }}
         compression: {{ barman.compression }}
-        recovery_options: {{ barman.recovery_options }}      
+        recovery_options: {{ barman.recovery_options }}    
+
+barman-api-client-config:
+  file.managed:
+    - name: {{ barman.api.client_config }}
+    - source: salt://barman/files/api_client.conf
+    - mode: 644
+    - user: {{ barman.user }}
+    - group: {{ barman.user }}
+    - template: jinja
+    - defaults:
+        user: {{ barman.user }}
+        config_dir: {{ barman.config_dir }}
+        home: {{ barman.home }}
+        log_file: {{ barman.log_file }}
+        log_level: {{ barman.log_level }}
+        compression: {{ barman.compression }}
+        recovery_options: {{ barman.recovery_options }}              
