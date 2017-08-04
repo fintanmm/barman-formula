@@ -11,7 +11,6 @@ barmanapi:
 
 /var/lib/barmanapi:
     file.directory:
-        - require:
         - user: {{ barman.user }}
         - group: {{ barman.user }}
         - dir_mode: 755
