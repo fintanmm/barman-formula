@@ -18,7 +18,6 @@ barmanapi:
         - recurse:
             - user
             - group
-            - mode
         - makedirs: True
         - clean: False
 
