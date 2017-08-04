@@ -29,8 +29,8 @@ barman-api-config:
         backup_count: {{ barman.api.backup_count }}    
         max_bytes: {{ barman.api.max_bytes }}    
         auth_token_secret: {{ barman.api.auth_token.secret }}    
-        auth_token_algorithm: {{ barman.api.sauth_token.algorithm }}    
-        auth_token_token_life: {{ barman.api.sauth_token.token_life }}    
+        auth_token_algorithm: {{ barman.api.auth_token.algorithm }}    
+        auth_token_token_life: {{ barman.api.auth_token.token_life }}    
 
 barman-api-client-config:
   file.managed:
