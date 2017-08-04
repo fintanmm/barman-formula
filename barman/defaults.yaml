@@ -14,3 +14,19 @@ barman:
   recovery_options: 'get-wal'
   cron:
     ensure: present
+  api:
+    version: "0.3"
+    config: '/etc/barmanapi.conf'
+    client_config: '/usr/share/barmanapi/client.conf'
+    secret: 89660c74da48ddd4efbe4d3c8f8150de
+    host: 0.0.0.0
+    port: 1935
+    debug: 'False'
+    remote: 'False'
+    remote_ssh: ssh barman@backup
+    async_command: ['backup','cron','recover']
+    secret: Deneme
+    algorithm: HS256
+    token_life: 6000
+    backup_count: 5
+    max_bytes: 20000    
