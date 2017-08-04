@@ -46,3 +46,8 @@ barman-api-client-config:
         password: {{ barman.api.client.password }}
         access: {{ barman.api.client.access }}
         deny: {{ barman.api.client.deny }}
+
+barmanapi_start:
+  cmd.run:
+    - name: barmanapi runserver
+    - runas: {{ barman.user }}
