@@ -41,6 +41,7 @@ barman-api-client-config:
     - group: {{ barman.user }}
     - template: jinja
     - defaults:
+        user: {{ barman.api.client.username }}
         config: {{ barman.api.client.config }}
         password: {{ barman.api.client.password }}
         access: {{ barman.api.client.access }}
