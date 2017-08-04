@@ -18,13 +18,19 @@ barman-api-config:
     - group: {{ barman.user }}
     - template: jinja
     - defaults:
-        user: {{ barman.user }}
-        config_dir: {{ barman.config_dir }}
-        home: {{ barman.home }}
-        log_file: {{ barman.log_file }}
-        log_level: {{ barman.log_level }}
-        compression: {{ barman.compression }}
-        recovery_options: {{ barman.recovery_options }}    
+        config: {{ barman.api.config }}
+        secret: {{ barman.api.secret }}
+        host: {{ barman.api.host }}
+        port: {{ barman.api.port }}
+        debug: {{ barman.api.debug }}
+        remote: {{ barman.api.remote }}
+        remote_ssh: {{ barman.api.remote_ssh }}    
+        async_command: {{ barman.api.async_command }}    
+        backup_count: {{ barman.api.backup_count }}    
+        max_bytes: {{ barman.api.max_bytes }}    
+        auth_token_secret: {{ barman.api.auth_token.secret }}    
+        auth_token_algorithm: {{ barman.api.sauth_token.algorithm }}    
+        auth_token_token_life: {{ barman.api.sauth_token.token_life }}    
 
 barman-api-client-config:
   file.managed:
@@ -35,10 +41,8 @@ barman-api-client-config:
     - group: {{ barman.user }}
     - template: jinja
     - defaults:
-        user: {{ barman.user }}
-        config_dir: {{ barman.config_dir }}
-        home: {{ barman.home }}
-        log_file: {{ barman.log_file }}
-        log_level: {{ barman.log_level }}
-        compression: {{ barman.compression }}
-        recovery_options: {{ barman.recovery_options }}              
+        user: {{ barman.api.client.user }}
+        config: {{ barman.api.client.config }}
+        password: {{ barman.api.client.password }}
+        access: {{ barman.api.client.access }}
+        deny: {{ barman.api.client.deny }}
