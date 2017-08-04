@@ -9,6 +9,20 @@ barmanapi:
     - require:
       - pkg: python-pip
 
+/var/lib/barmanapi:
+    file.directory:
+        - require:
+        - user: {{ barman.user }}
+        - group: {{ barman.user }}
+        - dir_mode: 755
+        - file_mode: 644
+        - recurse:
+            - user
+            - group
+            - mode
+        - makedirs: True
+        - clean: False
+
 barman-api-config:
   file.managed:
     - name: {{ barman.api.config }}
