@@ -39,3 +39,8 @@ Configures barman and the host specific files.
 ------------
 
 Sets up the barman cron job and the host specific cron job.
+
+``barman.api``
+------------
+
+Installs and configures Barman RESTful API(barmanapi)
