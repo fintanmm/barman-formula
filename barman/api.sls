@@ -9,7 +9,7 @@ barmanapi:
     - require:
       - pkg: python-pip
 
-barman-config:
+barman-api-config:
   file.managed:
     - name: {{ barman.api.config }}
     - source: salt://barman/files/api.conf
