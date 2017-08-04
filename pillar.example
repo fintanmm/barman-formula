@@ -30,5 +30,7 @@ barman:
         minute: 30
   api:
     secret: 89660c74da48ddd4efbe4d3c8f8150de
+    auth_token:
+      secret: Deneme    
     client:
       password: 26588e932c7ccfa1df309280702fe1b5    

@@ -24,9 +24,10 @@ barman:
     remote: 'False'
     remote_ssh: ssh barman@backup
     async_command: ['backup','cron','recover']
-    secret: Deneme
-    algorithm: HS256
-    token_life: 6000
+    auth_token:
+      secret: Deneme
+      algorithm: HS256
+      token_life: 6000
     backup_count: 5
     max_bytes: 20000    
     client:
