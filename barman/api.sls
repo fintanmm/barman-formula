@@ -45,6 +45,18 @@ barman-api-config:
         auth_token_token_life: {{ barman.api.auth_token.token_life }}
         client_config: {{ barman.api.client.config }}
 
+/usr/share/barmanapi/:
+    file.directory:
+        - user: {{ barman.user }}
+        - group: {{ barman.user }}
+        - dir_mode: 755
+        - file_mode: 644
+        - recurse:
+            - user
+            - group
+        - makedirs: True
+        - clean: False
+
 barman-api-client-config:
   file.managed:
     - name: {{ barman.api.client.config }}
