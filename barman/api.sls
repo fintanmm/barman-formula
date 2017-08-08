@@ -76,3 +76,4 @@ barmanapi_start:
   cmd.run:
     - name: barmanapi runserver
     - runas: {{ barman.user }}
+    - bg: True
